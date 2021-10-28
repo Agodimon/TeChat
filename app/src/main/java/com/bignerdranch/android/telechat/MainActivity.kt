@@ -1,22 +1,11 @@
 package com.bignerdranch.android.telechat
 
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.bignerdranch.android.telechat.databinding.ActivityMainBinding
-import com.bignerdranch.android.telechat.ui.ChatsFragment
-import com.bignerdranch.android.telechat.ui.SettingsFragment
+import com.bignerdranch.android.telechat.ui.fragments.ChatsFragment
 import com.bignerdranch.android.telechat.ui.objects.AppDrawer
-import com.mikepenz.materialdrawer.AccountHeader
-import com.mikepenz.materialdrawer.AccountHeaderBuilder
-import com.mikepenz.materialdrawer.Drawer
-import com.mikepenz.materialdrawer.DrawerBuilder
-import com.mikepenz.materialdrawer.model.DividerDrawerItem
-import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
-import com.mikepenz.materialdrawer.model.ProfileDrawerItem
-import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
