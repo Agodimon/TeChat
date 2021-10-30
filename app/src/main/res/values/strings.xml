@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">TeleChat</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tv_textview">TextView</string>
+    <string name="ivan_babenkov">Ivan Babenkov</string>
+    <string name="online_rus">в сети</string>
+    <string name="text_account">Аккаунт</string>
+    <string name="text_num_teleph">+7(911)-111-11-11</string>
+    <string name="editText_number_phone">Нажмите чтобы изменить номер телефона</string>
+    <string name="username">Имя пользователя</string>
+    <string name="settings_text_about_me">О себе</string>
+    <string name="settings_text_write_about_me">Напишите немного о себе</string>
 </resources>
