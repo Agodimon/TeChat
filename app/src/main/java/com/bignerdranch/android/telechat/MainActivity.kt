@@ -1,8 +1,10 @@
 package com.bignerdranch.android.telechat
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.bignerdranch.android.telechat.activities.RegisterActivity
 import com.bignerdranch.android.telechat.databinding.ActivityMainBinding
 import com.bignerdranch.android.telechat.ui.fragments.ChatsFragment
 import com.bignerdranch.android.telechat.ui.objects.AppDrawer
@@ -26,10 +28,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-        setSupportActionBar(mToolbar)
-        mAppDrawer.create()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.dataContainer, ChatsFragment()).commit()
+        if (false) {
+            setSupportActionBar(mToolbar)
+            mAppDrawer.create()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.dataContainer, ChatsFragment()).commit()
+        }else{
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
