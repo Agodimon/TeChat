@@ -1,9 +1,5 @@
 package com.bignerdranch.android.telechat.ui.fragments
 
-import android.text.Editable
-import android.text.TextWatcher
-import android.widget.Toast
-import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import com.bignerdranch.android.telechat.R
 import com.bignerdranch.android.telechat.utilits.AppTextWatcher
@@ -15,11 +11,10 @@ class EnterCodeFragment : Fragment(R.layout.fragment_enter_code) {
     override fun onStart() {
         super.onStart()
         register_input_code.addTextChangedListener(AppTextWatcher {
-                val string = register_input_code.text.toString()
-                if (string.length == 6) {
-                    verificateCode()
+            val string = register_input_code.text.toString()
+            if (string.length == 6) {
+                verificateCode()
             }
-
         })
     }
 

@@ -8,6 +8,8 @@ import com.bignerdranch.android.telechat.activities.RegisterActivity
 import com.bignerdranch.android.telechat.databinding.ActivityMainBinding
 import com.bignerdranch.android.telechat.ui.fragments.ChatsFragment
 import com.bignerdranch.android.telechat.ui.objects.AppDrawer
+import com.bignerdranch.android.telechat.utilits.replaceActivity
+import com.bignerdranch.android.telechat.utilits.replaceFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
@@ -31,11 +33,10 @@ class MainActivity : AppCompatActivity() {
         if (false) {
             setSupportActionBar(mToolbar)
             mAppDrawer.create()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.dataContainer, ChatsFragment()).commit()
-        }else{
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
+            replaceFragment(ChatsFragment())
+        } else {
+            replaceActivity(RegisterActivity())
+
         }
 
     }

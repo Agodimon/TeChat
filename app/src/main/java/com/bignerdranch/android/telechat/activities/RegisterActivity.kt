@@ -6,6 +6,8 @@ import androidx.appcompat.widget.Toolbar
 import com.bignerdranch.android.telechat.R
 import com.bignerdranch.android.telechat.databinding.ActivityRegisterBinding
 import com.bignerdranch.android.telechat.ui.fragments.EnterPhoneNumberFragment
+import com.bignerdranch.android.telechat.utilits.replaceActivity
+import com.bignerdranch.android.telechat.utilits.replaceFragment
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -23,8 +25,9 @@ class RegisterActivity : AppCompatActivity() {
         mToolbar = mBinding.registerToolbar
         setSupportActionBar(mToolbar)
         title=getString(R.string.register_title_your_phone)
-        supportFragmentManager.beginTransaction()
-            .add(R.id.registerDataContainer,EnterPhoneNumberFragment())
-            .commit()
+
+        replaceFragment(EnterPhoneNumberFragment())
+
+
     }
 }
