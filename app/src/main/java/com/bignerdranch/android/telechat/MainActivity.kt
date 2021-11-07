@@ -1,6 +1,5 @@
 package com.bignerdranch.android.telechat
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -8,13 +7,16 @@ import com.bignerdranch.android.telechat.activities.RegisterActivity
 import com.bignerdranch.android.telechat.databinding.ActivityMainBinding
 import com.bignerdranch.android.telechat.ui.fragments.ChatsFragment
 import com.bignerdranch.android.telechat.ui.objects.AppDrawer
+import com.bignerdranch.android.telechat.utilits.AUTH
 import com.bignerdranch.android.telechat.utilits.replaceActivity
 import com.bignerdranch.android.telechat.utilits.replaceFragment
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
     private lateinit var mAppDrawer: AppDrawer
     private lateinit var mToolbar: Toolbar
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,10 +32,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-        if (true) {
+        if (AUTH.currentUser!=null) {
             setSupportActionBar(mToolbar)
             mAppDrawer.create()
-            replaceFragment(ChatsFragment())
+            replaceFragment(ChatsFragment(),addStack = false)
         } else {
             replaceActivity(RegisterActivity())
 
@@ -46,6 +48,9 @@ class MainActivity : AppCompatActivity() {
 
         mToolbar = mBinding.mainToolbar
         mAppDrawer = AppDrawer(this, mToolbar)
+
+        AUTH = FirebaseAuth.getInstance()
+
     }
 
 }

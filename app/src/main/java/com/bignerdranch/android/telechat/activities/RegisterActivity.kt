@@ -16,7 +16,7 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mBinding= ActivityRegisterBinding.inflate(layoutInflater)
+        mBinding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
     }
 
@@ -24,7 +24,7 @@ class RegisterActivity : AppCompatActivity() {
         super.onStart()
         mToolbar = mBinding.registerToolbar
         setSupportActionBar(mToolbar)
-        title=getString(R.string.register_title_your_phone)
+        title = getString(R.string.register_title_your_phone)
 
         replaceFragment(EnterPhoneNumberFragment())
 
